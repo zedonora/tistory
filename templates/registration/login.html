@@ -1,0 +1,8 @@
+{% extends "registration/base.html" %} {% block title %}로그인 {% endblock %} {% block page %}login {% endblock %} {% block content %}
+<form action="" method="POST" action="{% url 'login' %}">
+    <!-- form.as_table => 테이블 형태 form.as_ul => 리스트 형태-->
+    {% csrf_token %}
+    <input type="hidden" name="next" value="" /> {{ form.as_p }}
+    <button type="submit">로그인</button>
+</form>
+{% endblock %}
